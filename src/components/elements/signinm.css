@@ -1,0 +1,15 @@
+.mbtn{
+    width: fit-content;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.btnm{
+    margin: 0;
+}
+@media screen and (max-width: 700px) { 
+
+    .mform {
+        padding: 50px;
+        border-radius: 10px;
+    }
+}

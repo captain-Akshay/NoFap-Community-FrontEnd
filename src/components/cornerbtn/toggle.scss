@@ -1,0 +1,96 @@
+.cornerbtn-body {
+  height: fit-content;
+  width: fit-content;
+}
+
+.cornerbtn-menu {
+  position: relative;
+  top: 40px;
+  padding: 30px;
+  background: #0d0d24;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0.2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0);
+  &::before, &::after {
+    content: "";
+    background: #c7c4c2;
+    border-radius: 5px;
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    left: 16px;
+    top: 27px;
+    transition: 0.2s ease;
+    z-index: 1;
+  }
+  &::before {
+    transform: rotate(0deg);
+  }
+  &::after {
+    transform: rotate(-90deg);
+  }
+  &.cornerbtn-open {
+    opacity: .9;
+    trans
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    .cornerbtn-item {
+      opacity: 1;
+      pointer-events: auto;
+      &:first-of-type {
+        bottom: 40px;
+        right: 70px;
+        background: url("chat-icon.svg") no-repeat 50%/ 50% #00D5FA;
+      }
+      &:nth-of-type(2) {
+        bottom: 80px;
+        background: url("exit.png") no-repeat 50%/ 50% #00D5FA;
+        transition-delay: .05s;
+      }
+      &:last-of-type {
+        bottom: 40px;
+        right: -70px;
+        background: url("music-icon.svg") no-repeat 50% 45%/50% 45% #00D5FA;
+        transition-delay: .1s;
+      }
+    }
+  }
+}
+
+.cornerbtn-item {
+  padding: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #e8e8f3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  // box-shadow: inherit;
+  transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28), 0.2s ease opacity, 0.2s cubic-bezier(.08,.82,.17,1) transform;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.cornerbtn{
+  position: fixed;
+  bottom: 45px;
+  right: 85px;
+}
+@media (max-width: 700px){
+  .menu{
+    transform: scale(1.1);
+  }
+  .button{
+    transform: scale(1.1);
+  }
+  .cornerbtn{
+    bottom: 45px;
+    right: 85px;
+  }
+}

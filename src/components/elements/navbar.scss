@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+.navbar-containier{
+  margin: 0;
+  padding: 0;
+}
+
+/* by default include the background of the option for the home navigation */
+.navbar-containier {
+  height: 117px;
+  width: 538.75px;
+  font-family: "Rubik", sans-serif;
+  /* transition for the change in bg color */
+  transition: background 0.2s ease-out;
+  nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(1.7);
+    transform: translateX(-50%);
+    display: flex;
+    /* considerable whitespace surrounding the navigation's items */
+    padding: 2rem 3.15rem;
+    border-radius: 0 0 30px 30px;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.2rem;
+    /* display the svg icon and span elements side by side, vertically aligned */
+    display: flex;
+    align-items: center;
+    /* include padding for the background applied on the active item */
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    /* position relative for the pseudo element */
+    position: relative;
+    /* custom properties for the colors picked up by the elements when clicked (and updated for each link in the script) */
+    --hover-bg: rgb(255, 255, 255);
+    --hover-c: #050505;
+  }
+  a svg {
+    margin-right: -2.5rem;
+    width: 28px;
+    height: 28px;
+    pointer-events: none;
+    /* transition for the change in margin */
+    transition: margin 0.2s ease-out;
+  }
+  a span {
+    opacity: 0;
+    visibility: hidden;
+    font-size: 0.9rem;
+    margin-left: 0.9rem;
+  }
+  a:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* positioned to the left of the anchor link and scaled to 0 */
+    transform: translate(0%, -50%) scale(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  a.active {
+    background: var(--hover-bg);
+    color: var(--hover-c);
+  }
+  a.active:before {
+    background: var(--hover-c);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0%, -50%) scale(2);
+    /* transition only when the class is applied */
+    transition: all 0.4s ease-out;
+  }
+  a.active svg {
+    margin-right: 0;
+  }
+  a.active span {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+  }
+}
+@media (max-width: 700px) {
+  .navbar-containier{
+    width:100%;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0;
+    padding: 2rem 1.15rem 2rem 0.75rem;
+  }
+  nav span {
+    display: none;
+  }
+}
+html,body,#root{
+  height: 100%;
+  width: 100%;
+  font-family: "Rubik",sans-serif;
+
+}

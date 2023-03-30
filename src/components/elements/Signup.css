@@ -1,0 +1,6 @@
+.ttcontainer{
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}

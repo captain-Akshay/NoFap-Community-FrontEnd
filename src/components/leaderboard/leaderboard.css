@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.leaderboard-container {
+    font-family: "Poppins", cursive;
+    margin: 0;
+}
+
+#main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+.board {
+    text-align: center;
+}
+
+.board .leaderboard{
+    margin-bottom: 1em;
+}
